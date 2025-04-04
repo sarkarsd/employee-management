@@ -1,6 +1,8 @@
 package com.example.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Positive;
 
 @Entity  // This marks the class as a database entity (a table)
 @Table(name = "employees") // This gives the table a name in the database
@@ -10,12 +12,15 @@ public class Employee {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Auto-increment the ID
     private Long id;
 
-    @Column(name = "name", nullable = false) // Maps to a column named "name" in the database
+    @NotBlank(message = "Name is required") // Ensures name is not empty
+    @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "department") // Maps to a column named "department"
+    @NotBlank(message = "Department is required") // Ensures department is not empty
+    @Column(name = "department")
     private String department;
 
+    @Positive(message = "Salary must be a positive number") // Ensures salary is positive
     @Column(name = "salary")
     private Double salary;
 
@@ -30,7 +35,7 @@ public class Employee {
         this.salary = salary;
     }
 
-    // Getters and Setters (to access and modify fields)
+    // Getters and Setters
     public Long getId() {
         return id;
     }

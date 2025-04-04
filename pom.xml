@@ -59,7 +59,19 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <!--  validating user inputs in Java applications. It helps ensure that the data received in an API request or stored in a database meets specific rules, such as:
+            Fields cannot be empty
+            Numbers must be positive
+            Emails must be in a valid format -->
+        <dependency>
+            <groupId>jakarta.validation</groupId>
+            <artifactId>jakarta.validation-api</artifactId>
+            <version>3.0.2</version>
+        </dependency>
     </dependencies>
+
+    
 
     <!--  Spring Boot Maven Plugin (Important for Running the App) -->
     <build>

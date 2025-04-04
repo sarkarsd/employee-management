@@ -1,12 +1,13 @@
 package com.example.service;
 
 import com.example.entity.Employee;
+import com.example.exception.EmployeeNotFoundException; // Import your exception
 import com.example.repository.EmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+ 
 
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class EmployeeService {
@@ -26,8 +27,8 @@ public class EmployeeService {
 
     // Get employee by ID
     public Employee getEmployeeById(Long id) {
-        Optional<Employee> optionalEmployee = employeeRepository.findById(id);
-        return optionalEmployee.orElse(null);
+        return employeeRepository.findById(id)
+            .orElseThrow(() -> new EmployeeNotFoundException("Employee not found with id: " + id));
     }
 
     // Update employee
