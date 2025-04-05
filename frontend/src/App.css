@@ -1,4 +1,5 @@
-/* Base styles */
+/* App.css */
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f4f7f9;
@@ -16,138 +17,108 @@ h1 {
   max-width: 1000px;
   margin: 40px auto;
   padding: 30px;
-  background-color: #ffffff;
+  background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Form styling */
 form {
   display: flex;
-  flex-direction: column;
-  gap: 14px;
-  margin-bottom: 30px;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 32px;
+  justify-content: space-between;
 }
 
 input {
-  padding: 12px;
+  flex: 1 1 30%;
+  padding: 10px 14px;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 16px;
-  width: 100%;
+  min-width: 200px;
 }
 
-/* Add Employee button */
 button {
   background-color: #3498db;
   color: white;
-  padding: 12px 20px;
+  padding: 10px 18px;
   font-size: 16px;
-  font-weight: 500;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  margin-top: 8px;
 }
 
 button:hover {
   background-color: #2980b9;
 }
 
-/* Employee table */
+/* Employee Table */
 .employee-table {
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0 8px;
+  table-layout: auto;
   margin-top: 20px;
-  table-layout: fixed;
 }
 
-/* Column spacing with vertical line separator */
 .employee-table th,
 .employee-table td {
-  padding: 14px 20px;
-  font-size: 15px;
+  padding: 14px 18px;
+  border: 1px solid #ddd;
   text-align: left;
-  border-bottom: 1px solid #e0e0e0;
-  word-wrap: break-word;
 }
 
-.employee-table th:nth-child(1),
-.employee-table td:nth-child(1) {
-  width: 25%;
-  border-right: 2px solid black;
-}
-
-.employee-table th:nth-child(2),
-.employee-table td:nth-child(2) {
-  width: 25%;
-  border-right: 2px solid black;
-}
-
-.employee-table th:nth-child(3),
-.employee-table td:nth-child(3) {
-  width: 20%;
-  border-right: 2px solid black;
-}
-
-.employee-table th:nth-child(4),
-.employee-table td:nth-child(4) {
-  width: 30%;
-}
-
-/* Table header */
 .employee-table th {
   background-color: #f0f0f0;
   color: #333;
+  font-weight: 600;
 }
 
-/* Button group */
+/* Vertical line between columns */
+.employee-table td:not(:last-child),
+.employee-table th:not(:last-child) {
+  border-right: 1px solid #ccc;
+}
+
+/* Zebra row color */
+.employee-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Action Buttons */
 .actions {
   display: flex;
-  gap: 12px;
-  justify-content: start;
+  gap: 10px;
 }
 
-/* Modern buttons */
 .actions button {
-  padding: 8px 16px;
+  padding: 8px 14px;
+  border-radius: 8px;
   font-size: 14px;
-  font-weight: 500;
   border: none;
-  border-radius: 20px;
-  color: white;
   cursor: pointer;
+  color: white;
   transition: all 0.2s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
-/* Edit button */
 .actions .edit {
-  background-color: #2ecc71;
+  background-color: #3498db;
 }
 
 .actions .edit:hover {
-  background-color: #27ae60;
+  background-color: #2980b9;
 }
 
-/* Delete button */
 .actions .delete {
   background-color: #e74c3c;
 }
 
 .actions .delete:hover {
   background-color: #c0392b;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .employee-table th,
-  .employee-table td {
-    font-size: 14px;
-    padding: 10px;
-  }
-
-  .actions {
-    flex-direction: column;
-    gap: 8px;
-  }
 }

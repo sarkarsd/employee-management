@@ -8,7 +8,7 @@ const EmployeeTable = ({ employees, setCurrentEmployee, refreshEmployees }) => {
   };
 
   return (
-    <table>
+    <table className="employee-table">
       <thead>
         <tr>
           <th>Name</th>
@@ -23,9 +23,13 @@ const EmployeeTable = ({ employees, setCurrentEmployee, refreshEmployees }) => {
             <td>{emp.name}</td>
             <td>{emp.department}</td>
             <td>{emp.salary}</td>
-            <td>
-              <button onClick={() => setCurrentEmployee(emp)}>Edit</button>
-              <button onClick={() => handleDelete(emp.id)}>Delete</button>
+            <td className="actions">
+              <button className="edit" onClick={() => setCurrentEmployee(emp)}>
+                <i className="fas fa-edit"></i> Edit
+              </button>
+              <button className="delete" onClick={() => handleDelete(emp.id)}>
+                <i className="fas fa-trash-alt"></i> Delete
+              </button>
             </td>
           </tr>
         ))}
