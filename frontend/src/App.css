@@ -1,38 +1,153 @@
-.App {
+/* Base styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f9;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
   text-align: center;
+  color: #2c3e50;
+  margin-top: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Form styling */
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+input {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  width: 100%;
+}
+
+/* Add Employee button */
+button {
+  background-color: #3498db;
   color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #2980b9;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Employee table */
+.employee-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed;
+}
+
+/* Column spacing with vertical line separator */
+.employee-table th,
+.employee-table td {
+  padding: 14px 20px;
+  font-size: 15px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+  word-wrap: break-word;
+}
+
+.employee-table th:nth-child(1),
+.employee-table td:nth-child(1) {
+  width: 25%;
+  border-right: 2px solid black;
+}
+
+.employee-table th:nth-child(2),
+.employee-table td:nth-child(2) {
+  width: 25%;
+  border-right: 2px solid black;
+}
+
+.employee-table th:nth-child(3),
+.employee-table td:nth-child(3) {
+  width: 20%;
+  border-right: 2px solid black;
+}
+
+.employee-table th:nth-child(4),
+.employee-table td:nth-child(4) {
+  width: 30%;
+}
+
+/* Table header */
+.employee-table th {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Button group */
+.actions {
+  display: flex;
+  gap: 12px;
+  justify-content: start;
+}
+
+/* Modern buttons */
+.actions button {
+  padding: 8px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Edit button */
+.actions .edit {
+  background-color: #2ecc71;
+}
+
+.actions .edit:hover {
+  background-color: #27ae60;
+}
+
+/* Delete button */
+.actions .delete {
+  background-color: #e74c3c;
+}
+
+.actions .delete:hover {
+  background-color: #c0392b;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .employee-table th,
+  .employee-table td {
+    font-size: 14px;
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  .actions {
+    flex-direction: column;
+    gap: 8px;
   }
 }
