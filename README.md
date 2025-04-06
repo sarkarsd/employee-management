@@ -10,7 +10,7 @@ A complete **Full-Stack CRUD** application built using **Java (Spring Boot)** fo
 - **Frontend**: React.js (Single Page Application), Axios
 - **Database**: MySQL
 - **Tools Used**: Postman (testing), Git, VS Code
-- **Planned Hosting**: AWS EC2, Docker (coming soon)
+
 
 ---
 
@@ -33,30 +33,31 @@ A complete **Full-Stack CRUD** application built using **Java (Spring Boot)** fo
 
 1. Clone the repository:
    
-   git clone https://github.com/sarkarsd/employee-management
-   cd employee-management
+      git clone https://github.com/sarkarsd/employee-management
+      cd employee-management
 
 2. Configure your MySQL DB in application.properties:
 
-spring.datasource.url=jdbc:mysql://localhost:3306/employeedb
-spring.datasource.username=your_username
-spring.datasource.password=your_password
+      spring.datasource.url=jdbc:mysql://localhost:3306/employeedb
+      spring.datasource.username=your_username
+      spring.datasource.password=your_password
 
 3. Run the Spring Boot backend:
 
-./mvnw spring-boot:run
+      ./mvnw spring-boot:run
 
 
 Frontend (React)
 1. Go to the frontend folder:
-   cd frontend
+      cd frontend
    
 2. Install dependencies:
-   npm install
+      npm install
 
 3. Start the frontend app:
-   npm start
-   App will open at http://localhost:3000
+      npm start
+
+App will open at http://localhost:3000
 
 
 🖼️ Screenshots
