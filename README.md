@@ -31,38 +31,33 @@ A complete **Full-Stack CRUD** application built using **Java (Spring Boot)** fo
 
 ### Backend (Spring Boot + MySQL)
 
-1. Clone the repository:
+1. **Clone the repository:**
+   - git clone https://github.com/sarkarsd/employee-management
+   - cd employee-management
+
+2. **Configure your MySQL DB in application.properties:**
+   - spring.datasource.url=jdbc:mysql://localhost:3306/employeedb
+   - spring.datasource.username=your_username
+   - spring.datasource.password=your_password
+
+3. **Run the Spring Boot backend:**
+   - ./mvnw spring-boot:run
+
+
+### Frontend (React)
+
+1. **Go to the frontend folder:**
+   - cd frontend
    
-      git clone https://github.com/sarkarsd/employee-management
-      cd employee-management
+2. **Install dependencies:**
+   - npm install
 
-2. Configure your MySQL DB in application.properties:
+3. **Start the frontend app:**
+   - npm start
 
-      spring.datasource.url=jdbc:mysql://localhost:3306/employeedb
-      spring.datasource.username=your_username
-      spring.datasource.password=your_password
-
-3. Run the Spring Boot backend:
-
-      ./mvnw spring-boot:run
+**App will open at http://localhost:3000**
 
 
-Frontend (React)
-1. Go to the frontend folder:
-      cd frontend
-   
-2. Install dependencies:
-      npm install
+## 🖼️ Screenshots
+![Employee Management](https://github.com/user-attachments/assets/3d8afd8f-8e09-4fe0-a72f-7077dcd114b4)
 
-3. Start the frontend app:
-      npm start
-
-App will open at http://localhost:3000
-
-
-🖼️ Screenshots
-🔹 Add Employee Form
-[Insert screenshot here]
-
-🔹 Employee Table View
-[Insert screenshot here]
